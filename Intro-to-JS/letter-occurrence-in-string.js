@@ -7,5 +7,5 @@ function solve(word, letter) {
         }
     }
 
-
+    console.log(numberOfOccurrences)
 }
