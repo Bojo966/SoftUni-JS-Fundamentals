@@ -11,9 +11,15 @@
         },
         {
             "type": "node",
+            "request": "attach",
+            "name": "Attach",
+            "port": 5858
+        },
+        {
+            "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/Intro-to-JS/sum-and-vat.js"
+            "program": "${workspaceRoot}/Lab-Functions-And-Arrow-Functions/words-uppercase.js"
         }
     ]
 }
