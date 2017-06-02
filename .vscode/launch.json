@@ -19,7 +19,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/Lab-Functions-And-Arrow-Functions/words-uppercase.js"
+            "program": "${workspaceRoot}/Functions-And-Arrow-Functions/trip-length.js"
         }
     ]
 }
