@@ -19,7 +19,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/Functions-And-Arrow-Functions/trip-length.js"
+            "program": "${workspaceRoot}/Lab-Arrays-And-Matrices/biggest-element.js"
         }
     ]
 }
