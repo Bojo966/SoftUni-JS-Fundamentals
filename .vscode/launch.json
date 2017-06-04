@@ -19,7 +19,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/Lab-Arrays-And-Matrices/biggest-element.js"
+            "program": "${workspaceRoot}/Functions-And-Arrow-Functions/radio-cristals.js"
         }
     ]
 }

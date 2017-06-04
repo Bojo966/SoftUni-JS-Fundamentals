@@ -7,14 +7,14 @@ function calculateDiagonalSums(matrix) {
         row.forEach(function(element, index) {
             if (index === leftDiagonalIndex) {
                 leftDiagonalSum += element
-                leftDiagonalIndex++
             }
 
             if (index === rightDiagonalIndex) {
-                rightDiagonalIndex++
                 rightDiagonalSum += element
             }
         })
+        leftDiagonalIndex++
+        rightDiagonalIndex--
     }, this);
 
     console.log(`${leftDiagonalSum} ${rightDiagonalSum}`)
