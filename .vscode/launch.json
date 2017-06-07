@@ -19,7 +19,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/Functions-And-Arrow-Functions/radio-cristals.js"
+            "program": "${workspaceRoot}/Arrays-And-Matrices/spiral-matrix.js"
         }
     ]
 }
