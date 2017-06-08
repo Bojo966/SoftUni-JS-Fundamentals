@@ -47,7 +47,7 @@ function printSpiralMatrix(numberOfRows, numberOfCols) {
         row.forEach(function(element) {
             outputLine += element + ' '
         }, this);
-        console.log(outputLine)
+        console.log(outputLine.substr(0, outputLine.length - 1))
     }, this);
 
 }

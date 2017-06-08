@@ -19,7 +19,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/Arrays-And-Matrices/spiral-matrix.js"
+            "program": "${workspaceRoot}/Lab-Arrays-And-Matrices/orbit.js"
         }
     ]
 }
