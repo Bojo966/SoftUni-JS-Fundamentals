@@ -1,0 +1,3 @@
+function startsWithSubstring(inputString, substring) {
+
+}
