@@ -19,7 +19,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/Lab-Arrays-And-Matrices/orbit.js"
+            "program": "${workspaceRoot}/Lab-Strings-and-Regex/employee-data.js"
         }
     ]
 }
