@@ -19,7 +19,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceRoot}/Lab-Strings-and-Regex/match-multiplication.js"
+            "program": "${workspaceRoot}/Strings-and-Regex/word-occurences.js"
         }
     ]
 }
