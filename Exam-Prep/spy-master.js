@@ -1,43 +1,51 @@
 function decodeMessages(inputStrings) {
-    let keyWord = inputStrings[0].toLowerCase()
-    let pattern = /\s+([A-Z\!\%\$\#]{8,})(\s|\.|\,|$)/g
-    for (let index = 1; index < inputStrings.length; index++) {
-        let currentString = inputStrings[index]
-        let currentStringLowercase = currentString.toLowerCase()
-        let currentIndexOfKeyword = -1
-        while ((currentIndexOfKeyword = String(currentStringLowercase).indexOf(keyWord, currentIndexOfKeyword + 1)) !== -1) {
-            if (currentString[currentIndexOfKeyword + keyWord.length] !== ' ') {
+    let pattern = `(\\s|^)(${inputStrings[0]}\\s+)([A-Z!%$#]{8,})(\\.|\\,|\\s|$)`
+    let rgx = new RegExp(pattern, 'gi')
+    for (var index = 1; index < inputStrings.length; index++) {
+        var element = inputStrings[index];
+        let match;
+        while (match = rgx.exec(element)) {
+            let matchedWord = match[3]
+            if (matchedWord.toUpperCase() !== matchedWord) {
                 continue
             }
 
-            let currentSubstring = currentString.substr(currentIndexOfKeyword + keyWord.length)
-            let match = pattern.exec(currentSubstring)
-            if (match) {
-                let currentWord = match[1]
-                let modifiedWord = currentWord
-                while (modifiedWord.indexOf('!') !== -1)
-                    modifiedWord = modifiedWord.replace('!', 1)
+            let matchedWordIndex = match[5]
 
-                while (modifiedWord.indexOf('%') !== -1)
-                    modifiedWord = modifiedWord.replace('%', 2)
+            let wholeMatch = match[0]
+            let modifiedMatch = match[1] + match[2] + decodeWord(matchedWord) + match[4]
+            element = element.replace(wholeMatch, modifiedMatch)
+        }
+        console.log(element)
+    }
 
-                while (modifiedWord.indexOf('#') !== -1)
-                    modifiedWord = modifiedWord.replace('#', 3)
-
-                while (modifiedWord.indexOf('$') !== -1)
-                    modifiedWord = modifiedWord.replace('$', 4)
-
-                modifiedWord = modifiedWord.toLocaleLowerCase()
-
-                currentString = currentString.replace(currentWord, modifiedWord)
-            }
+    function decodeWord(matchedWord) {
+        while (matchedWord.indexOf('!') !== -1) {
+            matchedWord = matchedWord.replace('!', '1')
         }
 
-        console.log(currentString)
+        while (matchedWord.indexOf('%') !== -1) {
+            matchedWord = matchedWord.replace('%', '2')
+        }
+
+        while (matchedWord.indexOf('#') !== -1) {
+            matchedWord = matchedWord.replace('#', '3')
+        }
+
+        while (matchedWord.indexOf('$') !== -1) {
+            matchedWord = matchedWord.replace('$', '4')
+        }
+
+        matchedWord = matchedWord.toLowerCase()
+
+        return matchedWord
     }
+
+
 }
 decodeMessages(['specialKey',
     'In this text the specialKey HELLOWORLD! is correct, but',
     'the following specialKey $HelloWorl#d and spEcIaLKEy HOLLOWORLD1 are not, while',
-    'SpeCIaLkeY   SOM%%ETH$IN and SPECIALKEY GOSHO are!'
+    'SpeCIaLkeY   SOM%%ETH$IN and SPECIALKEY ##$$##$$ are!'
+
 ])
